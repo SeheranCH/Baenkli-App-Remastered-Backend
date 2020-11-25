@@ -1,7 +1,9 @@
 package ch.tbz.m326.BaenkliApplication.config.security;
 
+import ch.tbz.m326.BaenkliApplication.config.security.filters.JwtRequestFilter;
 import ch.tbz.m326.BaenkliApplication.domainModells.user.UserService;
 import ch.tbz.m326.BaenkliApplication.domainModells.user.mapper.UserMapper;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,7 +32,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private PropertyReader propertyReader;
 
+    private Logger logger;
+
     private UserMapper userMapper;
+
+    @Autowired
+    JwtRequestFilter jwtRequestFilter;
 
     @Autowired
     public SecurityConfiguration(
@@ -82,12 +89,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                                 new AntPathRequestMatcher("/login", "POST"),
                                 authenticationManagerBean(),
                                 propertyReader,
+                                logger,
                                 userMapper)
                         , UsernamePasswordAuthenticationFilter.class)
                 .addFilterAfter(
                         new JWTAuthorizationFilter(userService, propertyReader), UsernamePasswordAuthenticationFilter.class)
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
 }

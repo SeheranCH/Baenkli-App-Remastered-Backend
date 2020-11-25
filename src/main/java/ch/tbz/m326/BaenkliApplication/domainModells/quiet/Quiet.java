@@ -20,11 +20,11 @@ public class Quiet extends ExtendedEntity {
     public Quiet() {
     }
 
-    public double getQuiet() {
-        return quiet;
-    }
+        public double getQuiet() {
+            return quiet;
+        }
 
-    public Quiet setQuiet(double quiet) {
+        public Quiet setQuiet(double quiet) {
         this.quiet = quiet;
         return this;
     }

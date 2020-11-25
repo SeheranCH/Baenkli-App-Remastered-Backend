@@ -54,7 +54,6 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
         if (subject != null) {
             User user = userService.findById(subject);
             UserDetailsImpl userDetails = new UserDetailsImpl(user);
-
             return new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
         }
         return null;

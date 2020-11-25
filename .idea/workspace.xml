@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f52dbd9b-6026-46d7-a45f-4992440dbf43" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/JWTAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/JWTAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/JWTAuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/JWTAuthorizationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/quiet/Quiet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/quiet/Quiet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserDetailsImpl.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kY43plbwuTV1REWBtip1hXd8Gh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.scopes" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ch.tbz.m326.BaenkliApplication.config.security.util" />
+      <recent name="ch.tbz.m326.BaenkliApplication.config.security.filters" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="BaenkliApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="BaenkliApplication.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ch.tbz.m326.BaenkliApplication.BaenkliApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f52dbd9b-6026-46d7-a45f-4992440dbf43" name="Default Changelist" comment="" />
+      <created>1605863994322</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605863994322</updated>
+      <workItem from="1605863999894" duration="6532000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="724" height="286" key="GridCell.Tab.0.bottom" timestamp="1606302852546">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602865" />
+    <state width="724" height="286" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606302852546" />
+    <state width="724" height="286" key="GridCell.Tab.0.center" timestamp="1606302852544">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602865" />
+    <state width="724" height="286" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606302852544" />
+    <state width="724" height="286" key="GridCell.Tab.0.left" timestamp="1606302852544">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602865" />
+    <state width="724" height="286" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606302852544" />
+    <state width="724" height="286" key="GridCell.Tab.0.right" timestamp="1606302852544">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602865" />
+    <state width="724" height="286" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606302852544" />
+    <state width="724" height="286" key="GridCell.Tab.1.bottom" timestamp="1606302852547">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602866" />
+    <state width="724" height="286" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606302852547" />
+    <state width="724" height="286" key="GridCell.Tab.1.center" timestamp="1606302852546">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602865" />
+    <state width="724" height="286" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1606302852546" />
+    <state width="724" height="286" key="GridCell.Tab.1.left" timestamp="1606302852546">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602865" />
+    <state width="724" height="286" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1606302852546" />
+    <state width="724" height="286" key="GridCell.Tab.1.right" timestamp="1606302852547">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602866" />
+    <state width="724" height="286" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1606302852547" />
+    <state width="1877" height="348" key="GridCell.Tab.2.bottom" timestamp="1605875602866">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.bottom/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602866" />
+    <state width="1877" height="348" key="GridCell.Tab.2.center" timestamp="1605875602866">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.center/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602866" />
+    <state width="1877" height="348" key="GridCell.Tab.2.left" timestamp="1605875602866">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.left/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602866" />
+    <state width="1877" height="348" key="GridCell.Tab.2.right" timestamp="1605875602866">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.right/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602866" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/JWTAuthenticationFilter.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
