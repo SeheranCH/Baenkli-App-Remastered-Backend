@@ -74,14 +74,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return source;
     }
 
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        propertyReader = new PropertyReader("jwt.properties");
-
+        propertyReader = new PropertyReader("application.properties");
         http.cors().and().csrf().disable().
                 authorizeRequests()
-                .antMatchers("/welcome", "/login", "/v2/api-docs", "/swagger-resources/**", "/swagger-ui.html",
-                        "/webjars/**", "/swagger.yaml", "/**")
+                .antMatchers("/users/", "/welcome", "/login", "/v2/api-docs", "/swagger-resources/**", "/swagger-ui.html",
+                        "/webjars/**", "/swagger.yaml")
                 .permitAll()
                 .anyRequest().authenticated().and()
                 .addFilterAfter(
@@ -94,9 +94,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         , UsernamePasswordAuthenticationFilter.class)
                 .addFilterAfter(
                         new JWTAuthorizationFilter(userService, propertyReader), UsernamePasswordAuthenticationFilter.class)
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+        /*.anyRequest().authenticated().and()
+        .addFilterAfter(
+            new JWTAuthenticationFilter(
+                new AntPathRequestMatcher("/login", "POST"),
+                authenticationManagerBean(),
+                propertyReader,
+                logger,
+                userMapper)
+            , UsernamePasswordAuthenticationFilter.class)
+        .sessionManagement()
+        .sessionCreationPolicy(SessionCreationPolicy.STATELESS);*/
     }
 
 }

@@ -2,9 +2,11 @@ package ch.tbz.m326.BaenkliApplication.domainModells.role;
 
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedEntity;
 import ch.tbz.m326.BaenkliApplication.domainModells.authority.Authority;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.annotations.*;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.persistence.*;
 import java.util.Set;
 
@@ -12,38 +14,53 @@ import java.util.Set;
 @Table(name = "role")
 public class Role extends ExtendedEntity {
 
-    @Column(name = "name", nullable = false)
-    private String name;
+  @Id
+  @GeneratedValue(generator = "system-uuid")
+  @GenericGenerator(name = "system-uuid", strategy = "uuid")
+  @Generated(GenerationTime.ALWAYS)
+  @Column(name = "id")
+  private String id;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinTable(
-            name = "role_authority",
-            joinColumns = @JoinColumn(name = "role_id"),
-            inverseJoinColumns = @JoinColumn(name = "authority_id")
-    )
-    private Set<Authority> authorities;
+  @Column(name = "name", nullable = false)
+  private String name;
 
-    public Role() {
-        super();
-    }
+  @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+  @OnDelete(action = OnDeleteAction.CASCADE)
+  @JoinTable(
+          name = "role_authority",
+          joinColumns = @JoinColumn(name = "role_id"),
+          inverseJoinColumns = @JoinColumn(name = "authority_id")
+  )
+  private Set<Authority> authorities;
 
-    public String getName() {
-        return name;
-    }
+  public Role() {
+    super();
+  }
 
-    public Role setName(String name) {
-        this.name = name;
-        return this;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public Set<Authority> getAuthorities() {
-        return authorities;
-    }
+  public Role setId(String id) {
+    this.id = id;
+    return this;
+  }
 
-    public Role setAuthorities(Set<Authority> authorities) {
-        this.authorities = authorities;
-        return this;
-    }
+  public String getName() {
+    return name;
+  }
+
+  public Role setName(String name) {
+    this.name = name;
+    return this;
+  }
+
+  public Set<Authority> getAuthorities() {
+    return authorities;
+  }
+
+  public Role setAuthorities(Set<Authority> authorities) {
+    this.authorities = authorities;
+    return this;
+  }
 }
-

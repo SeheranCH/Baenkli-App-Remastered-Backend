@@ -22,6 +22,9 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
     }
 
 
+    /**
+     * Actually load User by Email
+     */
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         try {

@@ -1,10 +1,9 @@
 package ch.tbz.m326.BaenkliApplication.domainModells.role;
 
-import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedJpaRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RoleRepository extends ExtendedJpaRepository<Role> {
+public interface RoleRepository extends JpaRepository<Role, String> {
 
 }
-

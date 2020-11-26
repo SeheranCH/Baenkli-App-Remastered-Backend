@@ -7,8 +7,6 @@ import ch.tbz.m326.BaenkliApplication.domainModells.user.UserDetailsImpl;
 import ch.tbz.m326.BaenkliApplication.domainModells.user.UserService;
 import ch.tbz.m326.BaenkliApplication.domainModells.user.mapper.UserMapper;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import org.slf4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,7 +21,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Date;
 
 public class JWTAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
 
@@ -51,7 +48,7 @@ public class JWTAuthenticationFilter extends AbstractAuthenticationProcessingFil
         try {
             User creds = new ObjectMapper().readValue(request.getInputStream(), User.class);
             Authentication auth = getAuthenticationManager()
-                    .authenticate(new UsernamePasswordAuthenticationToken(creds.getUsername(), creds.getPassword()));
+                    .authenticate(new UsernamePasswordAuthenticationToken(creds.getEmail(), creds.getPassword()));
             return auth;
         } catch(IOException e) {
             throw new RuntimeException(e);
@@ -105,6 +102,6 @@ public class JWTAuthenticationFilter extends AbstractAuthenticationProcessingFil
 
     @Override
     protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed) throws IOException, ServletException {
-        response.setStatus(HttpStatus.OK.value());
+        response.setStatus(HttpStatus.FORBIDDEN.value());
     }
 }

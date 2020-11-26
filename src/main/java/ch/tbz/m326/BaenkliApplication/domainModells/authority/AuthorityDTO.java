@@ -6,20 +6,21 @@ import javax.validation.constraints.NotNull;
 
 public class AuthorityDTO extends ExtendedDTO {
 
-    @NotNull
-    private String name;
+	private String id;
 
-    public AuthorityDTO() {
-        super();
-    }
+	@NotNull
+	private String name;
 
-    public String getName() {
-        return name;
-    }
+	public AuthorityDTO() {
+		super();
+	}
 
-    public AuthorityDTO setName(String name) {
-        this.name = name;
-        return this;
-    }
+	public String getName() {
+		return name;
+	}
 
+	public AuthorityDTO setName(String name) {
+		this.name = name;
+		return this;
+	}
 }
