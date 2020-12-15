@@ -3,12 +3,14 @@ package ch.tbz.m326.BaenkliApplication.domainModells.user;
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedJpaRepository;
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedServiceImpl;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -40,6 +42,12 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
     }
 
     @Override
+    public User findByUsername(String username) {
+        return findOrThrow(((UserRepository) repository).findByUsername(username));
+    }
+
+
+    @Override
     public User save(User user) {
         if (user.getPassword() != null) {
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
@@ -52,5 +60,11 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
         user.setAccountExpirationDate(LocalDate.now().plusYears(1));
         user.setCredentialsExpirationDate(LocalDate.now().plusYears(1));
         return repository.save(user);
+    }
+
+    @PreAuthorize("hasAuthority('USER_SEE')")
+    @Override
+    public List<User> findAll(){
+        return repository.findAll();
     }
 }

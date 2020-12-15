@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ch.tbz.m326.BaenkliApplication.domainModells.user.Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-15T12:26:26" hostname="WIN-ZRH-135" time="2.188">
+  <properties/>
+  <testcase name="findById()" classname="ch.tbz.m326.BaenkliApplication.domainModells.user.Test" time="2.188"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

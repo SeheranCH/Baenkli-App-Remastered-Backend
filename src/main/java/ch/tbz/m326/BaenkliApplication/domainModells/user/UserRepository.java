@@ -12,4 +12,8 @@ public interface UserRepository extends ExtendedJpaRepository<User> {
     @Transactional
     @Query(nativeQuery = true, value = "select * from public.users where email = :email and enabled = true")
     Optional<User> findByEmail(String email);
+
+    @Transactional
+    @Query(nativeQuery = true, value = "select * from public.users where username = :username and enabled = true")
+    Optional<User> findByUsername(String username);
 }

@@ -96,17 +96,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         new JWTAuthorizationFilter(userService, propertyReader), UsernamePasswordAuthenticationFilter.class)
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
-        /*.anyRequest().authenticated().and()
-        .addFilterAfter(
-            new JWTAuthenticationFilter(
-                new AntPathRequestMatcher("/login", "POST"),
-                authenticationManagerBean(),
-                propertyReader,
-                logger,
-                userMapper)
-            , UsernamePasswordAuthenticationFilter.class)
-        .sessionManagement()
-        .sessionCreationPolicy(SessionCreationPolicy.STATELESS);*/
     }
 
 }

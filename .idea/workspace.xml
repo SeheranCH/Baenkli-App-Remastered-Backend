@@ -8,50 +8,34 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/config/security/JWTAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/config/security/JWTAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/config/security/JWTAuthorizationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/config/security/JWTAuthorizationFilter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/config/security/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/config/security/SecurityConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/authority/Authority.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/authority/Authority.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/authority/AuthorityDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/authority/AuthorityDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/authority/AuthorityRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/authority/AuthorityRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/authority/mapper/AuthorityMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/authority/mapper/AuthorityMapperImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/role/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/role/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/role/RoleDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/role/RoleDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/role/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/role/RoleRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/role/mapper/RoleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/role/mapper/RoleMapperImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/user/UserDetailsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/user/UserDetailsImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/config/security/filters/JwtRequestFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/config/security/filters/JwtRequestFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/config/security/util/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/config/security/util/JwtUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/user/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/user/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/user/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/user/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/user/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/user/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/tbz/m326/BaenkliApplication/domainModells/user/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/address/mapper/AddressMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/address/mapper/AddressMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/authority/mapper/AuthorityMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/authority/mapper/AuthorityMapperExtendedImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/authority/mapper/AuthorityMapperExtendedImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/bench/mapper/BenchMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/bench/mapper/BenchMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/quiet/mapper/QuietMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/quiet/mapper/QuietMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/rating/mapper/RatingMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/rating/mapper/RatingMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/role/mapper/RoleMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/role/mapper/RoleMapperExtendedImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/role/mapper/RoleMapperExtendedImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/user/mapper/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/ch/tbz/m326/BaenkliApplication/domainModells/user/mapper/UserMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/JWTAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/JWTAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/JWTAuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/JWTAuthorizationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/authority/Authority.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/authority/AuthorityDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/authority/AuthorityRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/authority/mapper/AuthorityMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/role/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/role/RoleDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/role/RoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/role/mapper/RoleMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserDetailsImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/filters/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/filters/JwtRequestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/util/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/bench/Bench.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/bench/Bench.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +47,13 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -87,7 +78,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.scopes" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RecentsManager">
@@ -101,7 +92,47 @@
       <recent name="C:\Users\jest\IdeaProjects\Baenkli-App-Remastered-Backend\src\main\java\ch\tbz\m326\BaenkliApplication\domainModells\role" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.BaenkliApplication">
+    <configuration name="Test.findById" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;ch.tbz.m326.BaenkliApplication.domainModells.user.Test.findById&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserControllerTest.findById" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;ch.tbz.m326.BaenkliApplication.domainModells.user.UserControllerTest.findById&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="BaenkliApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BaenkliApplication.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ch.tbz.m326.BaenkliApplication.BaenkliApplication" />
@@ -109,6 +140,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.Test.findById" />
+        <item itemvalue="Gradle.UserControllerTest.findById" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -120,7 +157,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605863994322</updated>
-      <workItem from="1605863999894" duration="17997000" />
+      <workItem from="1605863999894" duration="22662000" />
+      <workItem from="1606755448704" duration="8286000" />
+      <workItem from="1606921889243" duration="3817000" />
+      <workItem from="1607431011655" duration="1317000" />
+      <workItem from="1607516576791" duration="14253000" />
+      <workItem from="1608035130026" duration="1367000" />
     </task>
     <servers />
   </component>
@@ -128,10 +170,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606309028943">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608035250022">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1606309028943" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1608035250019" />
     <state x="883" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606303474295">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -140,88 +182,100 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="503" y="174" key="EnvironmentVariablesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606308965906" />
-    <state width="1493" height="235" key="GridCell.Tab.0.bottom" timestamp="1606375645760">
+    <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1608035239589">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608035239589" />
+    <state width="1493" height="340" key="GridCell.Tab.0.bottom" timestamp="1608035262108">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602865" />
-    <state width="1493" height="235" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606375645760" />
-    <state width="1493" height="235" key="GridCell.Tab.0.center" timestamp="1606375645759">
+    <state width="1493" height="340" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608035262108" />
+    <state width="1493" height="340" key="GridCell.Tab.0.center" timestamp="1608035262107">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602865" />
-    <state width="1493" height="235" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606375645759" />
-    <state width="1493" height="235" key="GridCell.Tab.0.left" timestamp="1606375645759">
+    <state width="1493" height="340" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608035262107" />
+    <state width="1493" height="340" key="GridCell.Tab.0.left" timestamp="1608035262106">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602865" />
-    <state width="1493" height="235" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606375645759" />
-    <state width="1493" height="235" key="GridCell.Tab.0.right" timestamp="1606375645760">
+    <state width="1493" height="340" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608035262106" />
+    <state width="1493" height="340" key="GridCell.Tab.0.right" timestamp="1608035262108">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602865" />
-    <state width="1493" height="235" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606375645760" />
-    <state width="1493" height="235" key="GridCell.Tab.1.bottom" timestamp="1606375645761">
+    <state width="1493" height="340" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608035262108" />
+    <state width="1493" height="288" key="GridCell.Tab.1.bottom" timestamp="1607702054106">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602866" />
-    <state width="1493" height="235" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606375645761" />
-    <state width="1493" height="235" key="GridCell.Tab.1.center" timestamp="1606375645760">
+    <state width="1493" height="288" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607702054106" />
+    <state width="1493" height="288" key="GridCell.Tab.1.center" timestamp="1607702054106">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602865" />
-    <state width="1493" height="235" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1606375645760" />
-    <state width="1493" height="235" key="GridCell.Tab.1.left" timestamp="1606375645760">
+    <state width="1493" height="288" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1607702054106" />
+    <state width="1493" height="288" key="GridCell.Tab.1.left" timestamp="1607702054105">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602865" />
-    <state width="1493" height="235" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1606375645760" />
-    <state width="1493" height="235" key="GridCell.Tab.1.right" timestamp="1606375645760">
+    <state width="1493" height="288" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1607702054105" />
+    <state width="1493" height="288" key="GridCell.Tab.1.right" timestamp="1607702054106">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602866" />
-    <state width="1493" height="235" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1606375645760" />
-    <state width="1493" height="119" key="GridCell.Tab.2.bottom" timestamp="1606313417249">
+    <state width="1493" height="288" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1607702054106" />
+    <state width="1493" height="179" key="GridCell.Tab.2.bottom" timestamp="1606902369337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.2.bottom/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602866" />
-    <state width="1493" height="119" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606313417249" />
-    <state width="1493" height="119" key="GridCell.Tab.2.center" timestamp="1606313417249">
+    <state width="1493" height="179" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606902369337" />
+    <state width="1493" height="179" key="GridCell.Tab.2.center" timestamp="1606902369337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.2.center/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602866" />
-    <state width="1493" height="119" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1606313417249" />
-    <state width="1493" height="119" key="GridCell.Tab.2.left" timestamp="1606313417249">
+    <state width="1493" height="179" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1606902369337" />
+    <state width="1493" height="179" key="GridCell.Tab.2.left" timestamp="1606902369337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.2.left/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602866" />
-    <state width="1493" height="119" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1606313417249" />
-    <state width="1493" height="119" key="GridCell.Tab.2.right" timestamp="1606313417249">
+    <state width="1493" height="179" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1606902369337" />
+    <state width="1493" height="179" key="GridCell.Tab.2.right" timestamp="1606902369337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.2.right/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605875602866" />
-    <state width="1493" height="119" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1606313417249" />
-    <state x="463" y="144" width="609" height="536" key="find.popup" timestamp="1606308885800">
+    <state width="1493" height="179" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1606902369337" />
+    <state x="277" y="55" key="SettingsEditor" timestamp="1607679831578">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="463" y="144" width="609" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1606308885800" />
+    <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607679831578" />
+    <state x="486" y="131" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1607516719413">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="486" y="131" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1607516719413" />
+    <state x="463" y="144" width="791" height="536" key="find.popup" timestamp="1606912641875">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="463" y="144" width="791" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1606912641875" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/JWTAuthenticationFilter.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserDetailsImpl.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/filters/JwtRequestFilter.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/src/test/java/ch/tbz/m326/BaenkliApplication/domainModells/user/UserControllerTest.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ch/tbz/m326/BaenkliApplication/config/security/JWTAuthorizationFilter.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/test/java/ch/tbz/m326/BaenkliApplication/domainModells/user/Test.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

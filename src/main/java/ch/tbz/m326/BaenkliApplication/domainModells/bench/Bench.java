@@ -27,8 +27,8 @@ public class Bench extends ExtendedEntity {
     @Column(name = "longitude")
     private Double longitude;
 
-    @Column(name = "amountBenches")
-    private int amountBenches;
+        @Column(name = "amountBenches")
+        private int amountBenches;
 
     @Column(name = "amountFirePlaces")
     private int amountFirePlaces;

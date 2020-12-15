@@ -1,8 +1,10 @@
 package ch.tbz.m326.BaenkliApplication.config.security.util;
 
+import ch.tbz.m326.BaenkliApplication.domainModells.user.UserServiceImpl;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +16,19 @@ import java.util.function.Function;
 @Service
 public class JwtUtil {
 
+    @Autowired
+    private UserServiceImpl userServiceImpl;
+
     private String SECRET_KEY = "secret";
 
     public String extractUsername(String token) {
-        return extractClaim(token, Claims::getSubject);
+        String username= extractClaim(token, Claims::getSubject);
+        return username;
+    }
+
+    public String getEmail(String token){
+        String email = userServiceImpl.findByUsername(extractUsername(token)).getEmail();
+        return email;
     }
 
     public Date extractExpiration(String token) {
