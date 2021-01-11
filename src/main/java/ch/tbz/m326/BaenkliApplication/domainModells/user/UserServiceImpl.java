@@ -1,5 +1,6 @@
 package ch.tbz.m326.BaenkliApplication.domainModells.user;
 
+import ch.tbz.m326.BaenkliApplication.config.error.BadRequestException;
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedJpaRepository;
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedServiceImpl;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -60,6 +61,17 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
         user.setAccountExpirationDate(LocalDate.now().plusYears(1));
         user.setCredentialsExpirationDate(LocalDate.now().plusYears(1));
         return repository.save(user);
+    }
+
+    @Override
+    public User updateById(String id, User entity) throws NoSuchElementException, BadRequestException {
+       User oldUser = findById(id);
+       if (oldUser != null && entity.getId() != null && oldUser.getId().equals(entity.getId())) {
+          return this.save(entity);
+
+       } else {
+           throw new BadRequestException("Body data not valid");
+       }
     }
 
     @PreAuthorize("hasAuthority('USER_SEE')")
