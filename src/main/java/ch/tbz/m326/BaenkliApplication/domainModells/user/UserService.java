@@ -10,4 +10,5 @@ public interface UserService extends UserDetailsService, ExtendedService<User> {
     User findByEmail(String email);
 
     User findByUsername(String username);
+
 }

@@ -1,5 +1,6 @@
 package ch.tbz.m326.BaenkliApplication.domainModells.bench;
 
+import ch.tbz.m326.BaenkliApplication.config.error.BadRequestException;
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedJpaRepository;
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedServiceImpl;
 import ch.tbz.m326.BaenkliApplication.domainModells.address.Address;
@@ -17,17 +18,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
+import java.util.logging.Logger;
 
 @Service
 public class BenchServiceImpl extends ExtendedServiceImpl<Bench> implements BenchService {
 
+    private BenchRepository benchRepository;
     private RatingService ratingService;
     private QuietService quietService;
     private UserService userService;
     private AddressService addressService;
 
-    public BenchServiceImpl(@Qualifier("benchRepository") ExtendedJpaRepository<Bench> repository, RatingService ratingService, QuietService quietService, UserService userService, AddressService addressService) {
+    public BenchServiceImpl(@Qualifier("benchRepository") ExtendedJpaRepository<Bench> repository, BenchRepository benchRepository, RatingService ratingService, QuietService quietService, UserService userService, AddressService addressService) {
         super(repository);
+        this.benchRepository = benchRepository;
         this.ratingService = ratingService;
         this.quietService = quietService;
         this.userService = userService;
@@ -56,6 +60,18 @@ public class BenchServiceImpl extends ExtendedServiceImpl<Bench> implements Benc
             }
         }
         return foundByLongitudeLatitude;
+    }
+
+    @Override
+    public List<Bench> findByUserId(String userId) {
+        List<Bench> allBenches = repository.findAll();
+        User user = userService.findById(userId);
+        if (user!=null) {
+            List<Bench> benchesByUser = benchRepository.findAllByUserId(userId);
+            return benchesByUser;
+        } else {
+            throw new BadRequestException("User Id not found");
+        }
     }
 
     @Override
