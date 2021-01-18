@@ -67,12 +67,9 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
 
     @Override
     public User updateById(String id, User entity) throws NoSuchElementException, BadRequestException {
-       User oldUser = findById(id);
-       if (oldUser != null && entity.getId() != null && oldUser.getId().equals(entity.getId())) {
-          return this.save(entity);
-       } else {
-           throw new BadRequestException("Body data not valid");
-       }
+        User oldUser = findById(id);
+        entity.setPassword(oldUser.getPassword());
+        return repository.save(entity);
     }
 
     @PreAuthorize("hasAuthority('USER_SEE')")
