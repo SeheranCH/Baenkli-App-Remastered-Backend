@@ -2,13 +2,14 @@ package ch.tbz.m326.BaenkliApplication.domainModells.bench;
 
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedEntity;
 import ch.tbz.m326.BaenkliApplication.domainModells.address.Address;
-import ch.tbz.m326.BaenkliApplication.domainModells.quiet.Quiet;
 import ch.tbz.m326.BaenkliApplication.domainModells.rating.Rating;
 import ch.tbz.m326.BaenkliApplication.domainModells.user.User;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import java.util.Set;
 
 @Entity
@@ -27,8 +28,8 @@ public class Bench extends ExtendedEntity {
     @Column(name = "longitude")
     private Double longitude;
 
-        @Column(name = "amountBenches")
-        private int amountBenches;
+    @Column(name = "amountBenches")
+    private int amountBenches;
 
     @Column(name = "amountFirePlaces")
     private int amountFirePlaces;
@@ -48,6 +49,11 @@ public class Bench extends ExtendedEntity {
     @Column(name = "isLocationOnWater")
     private boolean isLocationOnWater;
 
+    @Column(name = "quietness")
+    @Min(value = 1)
+    @Max(value = 5)
+    private double quietness;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -60,9 +66,6 @@ public class Bench extends ExtendedEntity {
 
     @OneToMany(fetch = FetchType.EAGER)
     private Set<Rating> ratings;
-
-    @OneToMany(fetch = FetchType.EAGER)
-    private Set<Quiet> quiets;
 
     public Bench() {}
 
@@ -192,12 +195,11 @@ public class Bench extends ExtendedEntity {
         return this;
     }
 
-    public Set<Quiet> getQuiets() {
-        return quiets;
+    public double getQuietness() {
+        return quietness;
     }
 
-    public Bench setQuiets(Set<Quiet> quiets) {
-        this.quiets = quiets;
-        return this;
+    public void setQuietness(double quietness) {
+        this.quietness = quietness;
     }
 }

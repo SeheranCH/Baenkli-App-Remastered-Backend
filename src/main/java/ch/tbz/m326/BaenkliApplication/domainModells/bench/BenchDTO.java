@@ -2,7 +2,6 @@ package ch.tbz.m326.BaenkliApplication.domainModells.bench;
 
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedDTO;
 import ch.tbz.m326.BaenkliApplication.domainModells.address.Address;
-import ch.tbz.m326.BaenkliApplication.domainModells.quiet.Quiet;
 import ch.tbz.m326.BaenkliApplication.domainModells.rating.Rating;
 import ch.tbz.m326.BaenkliApplication.domainModells.user.User;
 
@@ -34,13 +33,13 @@ public class BenchDTO extends ExtendedDTO {
 
     private boolean isLocationOnWater;
 
+    private double quietness;
+
     private Address address;
 
     private User user;
 
     private Set<Rating> ratings;
-
-    private Set<Quiet> quiets;
 
     public BenchDTO() {}
 
@@ -178,12 +177,11 @@ public class BenchDTO extends ExtendedDTO {
         return this;
     }
 
-    public Set<Quiet> getQuiets() {
-        return quiets;
+    public double getQuietness() {
+        return quietness;
     }
 
-    public BenchDTO setQuiets(Set<Quiet> quiets) {
-        this.quiets = quiets;
-        return this;
+    public void setQuietness(double quietness) {
+        this.quietness = quietness;
     }
 }

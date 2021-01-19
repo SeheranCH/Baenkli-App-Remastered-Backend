@@ -12,7 +12,7 @@ public interface BenchService extends ExtendedService<Bench> {
 
     Bench addRatingToBench (String benchId, String ratingId);
 
-    Bench addQuietToBench (String benchId, String quietId);
+    //Bench addQuietToBench (String benchId, String quietId);
 
     Bench addUserToBench (String benchId, String userId);
 

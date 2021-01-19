@@ -46,11 +46,14 @@ public class BenchController {
         return new ResponseEntity<>(benchDTO, HttpStatus.OK);
     }
 
+    /*
     @PutMapping({"/{benchId}/quiet/{quietId}", "/{benchId}/quiet/{quietId}/"})
     public ResponseEntity<BenchDTO> addQuietToBench(@PathVariable String benchId, @PathVariable String quietId, @RequestBody BenchDTO benchDTO) {
         benchDTO = benchMapper.toDTO(benchService.addQuietToBench(benchId, quietId));
         return new ResponseEntity<>(benchDTO, HttpStatus.OK);
     }
+
+     */
 
     @PutMapping({"/{benchId}/user/{userId}", "/{benchId}/user/{userId}/"})
     public ResponseEntity<BenchDTO> addUserToBench(@PathVariable String benchId, @PathVariable String userId, @RequestBody BenchDTO benchDTO) {

@@ -4,8 +4,6 @@ import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedJpaRepository;
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedServiceImpl;
 import ch.tbz.m326.BaenkliApplication.domainModells.address.Address;
 import ch.tbz.m326.BaenkliApplication.domainModells.address.AddressService;
-import ch.tbz.m326.BaenkliApplication.domainModells.quiet.Quiet;
-import ch.tbz.m326.BaenkliApplication.domainModells.quiet.QuietService;
 import ch.tbz.m326.BaenkliApplication.domainModells.rating.Rating;
 import ch.tbz.m326.BaenkliApplication.domainModells.rating.RatingService;
 import ch.tbz.m326.BaenkliApplication.domainModells.user.User;
@@ -22,14 +20,12 @@ import java.util.Set;
 public class BenchServiceImpl extends ExtendedServiceImpl<Bench> implements BenchService {
 
     private RatingService ratingService;
-    private QuietService quietService;
     private UserService userService;
     private AddressService addressService;
 
-    public BenchServiceImpl(@Qualifier("benchRepository") ExtendedJpaRepository<Bench> repository, RatingService ratingService, QuietService quietService, UserService userService, AddressService addressService) {
+    public BenchServiceImpl(@Qualifier("benchRepository") ExtendedJpaRepository<Bench> repository, RatingService ratingService, UserService userService, AddressService addressService) {
         super(repository);
         this.ratingService = ratingService;
-        this.quietService = quietService;
         this.userService = userService;
         this.addressService = addressService;
     }
@@ -81,6 +77,7 @@ public class BenchServiceImpl extends ExtendedServiceImpl<Bench> implements Benc
         return repository.save(bench);
     }
 
+    /*
     @Override
     public Bench addQuietToBench(String benchId, String quietId) {
         Bench bench = checkBenchById(benchId);
@@ -93,6 +90,8 @@ public class BenchServiceImpl extends ExtendedServiceImpl<Bench> implements Benc
         bench.setQuiets(quiets);
         return repository.save(bench);
     }
+
+     */
 
     @Override
     public Bench addUserToBench(String benchId, String userId) {
