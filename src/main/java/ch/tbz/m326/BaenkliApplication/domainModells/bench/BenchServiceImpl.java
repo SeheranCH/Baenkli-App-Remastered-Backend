@@ -1,5 +1,6 @@
 package ch.tbz.m326.BaenkliApplication.domainModells.bench;
 
+import ch.tbz.m326.BaenkliApplication.config.error.BadRequestException;
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedJpaRepository;
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedServiceImpl;
 import ch.tbz.m326.BaenkliApplication.domainModells.address.Address;
@@ -19,12 +20,14 @@ import java.util.Set;
 @Service
 public class BenchServiceImpl extends ExtendedServiceImpl<Bench> implements BenchService {
 
+    private BenchRepository benchRepository;
     private RatingService ratingService;
     private UserService userService;
     private AddressService addressService;
 
-    public BenchServiceImpl(@Qualifier("benchRepository") ExtendedJpaRepository<Bench> repository, RatingService ratingService, UserService userService, AddressService addressService) {
+    public BenchServiceImpl(@Qualifier("benchRepository") ExtendedJpaRepository<Bench> repository, BenchRepository benchRepository, RatingService ratingService, UserService userService, AddressService addressService) {
         super(repository);
+        this.benchRepository = benchRepository;
         this.ratingService = ratingService;
         this.userService = userService;
         this.addressService = addressService;
@@ -52,6 +55,17 @@ public class BenchServiceImpl extends ExtendedServiceImpl<Bench> implements Benc
             }
         }
         return foundByLongitudeLatitude;
+    }
+
+    @Override
+    public List<Bench> findByUserId(String userId) {
+        User user = userService.findById(userId);
+        if (user != null) {
+            List<Bench> benchesByUser = benchRepository.findAllByUserId(userId);
+            return benchesByUser;
+        } else {
+            throw new BadRequestException("User Id not found");
+        }
     }
 
     @Override
