@@ -10,6 +10,7 @@ import org.hibernate.annotations.OnDeleteAction;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -66,6 +67,15 @@ public class Bench extends ExtendedEntity {
 
     @OneToMany(fetch = FetchType.EAGER)
     private Set<Rating> ratings;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinTable(
+            name = "users_benches",
+            joinColumns = @JoinColumn(name = "bench_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    private List<User> favorites;
 
     public Bench() {}
 
@@ -201,5 +211,13 @@ public class Bench extends ExtendedEntity {
 
     public void setQuietness(double quietness) {
         this.quietness = quietness;
+    }
+
+    public List<User> getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(List<User> favorites) {
+        this.favorites = favorites;
     }
 }

@@ -1,12 +1,14 @@
 package ch.tbz.m326.BaenkliApplication.domainModells.user;
 
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedEntity;
+import ch.tbz.m326.BaenkliApplication.domainModells.bench.Bench;
 import ch.tbz.m326.BaenkliApplication.domainModells.role.Role;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 @Entity
