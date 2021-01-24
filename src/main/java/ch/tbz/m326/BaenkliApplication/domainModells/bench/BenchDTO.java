@@ -4,6 +4,7 @@ import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedDTO;
 import ch.tbz.m326.BaenkliApplication.domainModells.address.Address;
 import ch.tbz.m326.BaenkliApplication.domainModells.rating.Rating;
 import ch.tbz.m326.BaenkliApplication.domainModells.user.User;
+import ch.tbz.m326.BaenkliApplication.domainModells.user.UserDTOWithoutPassword;
 
 import java.util.Set;
 

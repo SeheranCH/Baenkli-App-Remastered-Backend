@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-01-24T23:01:53+0100",
-    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.2 (Oracle Corporation)"
+    date = "2021-01-18T16:16:53+0100",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.1 (Oracle Corporation)"
 )
 @Component
 public class BenchMapperImpl implements BenchMapper {
@@ -44,8 +44,6 @@ public class BenchMapperImpl implements BenchMapper {
         if ( set != null ) {
             bench.setRatings( new HashSet<Rating>( set ) );
         }
-        bench.setQuietness( dto.getQuietness() );
-
         return bench;
     }
 
@@ -103,8 +101,6 @@ public class BenchMapperImpl implements BenchMapper {
         if ( set != null ) {
             benchDTO.setRatings( new HashSet<Rating>( set ) );
         }
-        benchDTO.setQuietness( dm.getQuietness() );
-
         return benchDTO;
     }
 

@@ -34,6 +34,14 @@ public class BenchController {
         return new ResponseEntity<>(benchMapper.toDTOs(benches), HttpStatus.OK);
     }
 
+    @GetMapping({"/users/{userId}", "/users/{userId}/"})
+    public @ResponseBody
+    ResponseEntity<List<BenchDTO>> findAllByUserId(@PathVariable String userId) {
+        List<Bench> benches = benchService.findByUserId(userId);
+        return new ResponseEntity<>(benchMapper.toDTOs(benches), HttpStatus.OK);
+    }
+
+
     @PostMapping({"", "/"})
     public ResponseEntity<BenchDTO> create(@RequestBody BenchDTO benchDTO) {
         benchDTO = benchMapper.toDTO(benchService.save(benchMapper.fromDTO(benchDTO)));
@@ -82,6 +90,10 @@ public class BenchController {
     /**
      * Get benches by address
      */
+    /**
+     *
+     * NOT WORKING !!! NEED TO BE FIXED
+     */
     @GetMapping("/address/{id}")
     public @ResponseBody
     ResponseEntity<List<BenchDTO>> findByAddressId(@PathVariable String id) {
@@ -91,6 +103,10 @@ public class BenchController {
 
     /**
      * Get benches by longitude and latitude
+     */
+    /**
+     *
+     * NOT WORKING !!! NEED TO BE FIXED
      */
     @GetMapping("/{longitude}/{latitude}")
     public @ResponseBody

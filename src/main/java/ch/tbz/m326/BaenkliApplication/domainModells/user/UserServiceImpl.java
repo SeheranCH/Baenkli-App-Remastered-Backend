@@ -56,22 +56,27 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
             String standardPassword = "12345";
             user.setPassword(bCryptPasswordEncoder.encode(standardPassword));
         }
-        user.setEnabled(true);
-        user.setLocked(false);
-        user.setAccountExpirationDate(LocalDate.now().plusYears(1));
-        user.setCredentialsExpirationDate(LocalDate.now().plusYears(1));
+        if (user.getId() == null) {
+            user.setEnabled(true);
+            user.setLocked(false);
+            user.setAccountExpirationDate(LocalDate.now().plusYears(1));
+            user.setCredentialsExpirationDate(LocalDate.now().plusYears(1));
+        }
         return repository.save(user);
     }
 
     @Override
     public User updateById(String id, User entity) throws NoSuchElementException, BadRequestException {
-       User oldUser = findById(id);
-       if (oldUser != null && entity.getId() != null && oldUser.getId().equals(entity.getId())) {
-          return this.save(entity);
-
-       } else {
-           throw new BadRequestException("Body data not valid");
-       }
+        User user = findById(id);
+        if (user.getId().equals(entity.getId())) {
+            user.setUsername(entity.getUsername());
+            user.setEmail(entity.getEmail());
+            user.setFirstName(entity.getFirstName());
+            user.setLastName(entity.getLastName());
+            return repository.save(user);
+        } else {
+            throw new BadRequestException("Invalid body");
+        }
     }
 
     @PreAuthorize("hasAuthority('USER_SEE')")
@@ -79,4 +84,5 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
     public List<User> findAll(){
         return repository.findAll();
     }
+
 }
