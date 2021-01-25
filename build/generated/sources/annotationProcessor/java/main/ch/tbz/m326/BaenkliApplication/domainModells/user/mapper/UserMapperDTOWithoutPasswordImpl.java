@@ -1,5 +1,6 @@
 package ch.tbz.m326.BaenkliApplication.domainModells.user.mapper;
 
+import ch.tbz.m326.BaenkliApplication.domainModells.bench.Bench;
 import ch.tbz.m326.BaenkliApplication.domainModells.user.User;
 import ch.tbz.m326.BaenkliApplication.domainModells.user.UserDTOWithoutPassword;
 import java.util.ArrayList;
@@ -11,8 +12,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-01-18T16:16:54+0100",
-    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.1 (Oracle Corporation)"
+    date = "2021-01-25T02:49:50+0100",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.2 (Oracle Corporation)"
 )
 @Component
 public class UserMapperDTOWithoutPasswordImpl implements UserMapperDTOWithoutPassword {
@@ -30,6 +31,10 @@ public class UserMapperDTOWithoutPasswordImpl implements UserMapperDTOWithoutPas
         user.setEmail( dto.getEmail() );
         user.setFirstName( dto.getFirstName() );
         user.setLastName( dto.getLastName() );
+        List<Bench> list = dto.getFavoriteBenches();
+        if ( list != null ) {
+            user.setFavoriteBenches( new ArrayList<Bench>( list ) );
+        }
 
         return user;
     }
@@ -75,6 +80,10 @@ public class UserMapperDTOWithoutPasswordImpl implements UserMapperDTOWithoutPas
         userDTOWithoutPassword.setEmail( dm.getEmail() );
         userDTOWithoutPassword.setFirstName( dm.getFirstName() );
         userDTOWithoutPassword.setLastName( dm.getLastName() );
+        List<Bench> list = dm.getFavoriteBenches();
+        if ( list != null ) {
+            userDTOWithoutPassword.setFavoriteBenches( new ArrayList<Bench>( list ) );
+        }
 
         return userDTOWithoutPassword;
     }
