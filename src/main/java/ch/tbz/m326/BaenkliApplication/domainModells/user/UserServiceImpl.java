@@ -62,8 +62,9 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
             optionalUser.get().getFavoriteBenches().add(benchToAdd.get());
             List<Bench> newList = optionalUser.get().getFavoriteBenches().stream().distinct().collect(Collectors.toList());
             optionalUser.get().setFavoriteBenches(newList);
+            return updateById(userId, optionalUser.get());
         }
-        return updateById(userId, optionalUser.get());
+        throw new NoSuchElementException("user don't exist");
     }
 
     @Override
@@ -75,8 +76,8 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
             if (currentFavorites.remove(benchToRemove.get())) {
                 user.get().setFavoriteBenches(currentFavorites);
                 return updateById(userId, user.get());
-            } else throw new NoSuchElementException("Article hasn't been able to be removed");
-        } else throw new NoSuchElementException("Article or User don't exist");
+            } else throw new NoSuchElementException("Bench hasn't been able to be removed");
+        } else throw new NoSuchElementException("Bench or User don't exist");
 
     }
 
