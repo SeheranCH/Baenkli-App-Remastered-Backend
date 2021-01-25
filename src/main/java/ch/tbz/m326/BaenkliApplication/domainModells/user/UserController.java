@@ -54,6 +54,12 @@ public class UserController {
         return new ResponseEntity<>(userMapperDTOWithoutPassword.toDTO(user), HttpStatus.OK);
     }
 
+    @PutMapping("/{userId}/favorites/benches/{benchId}")
+    public ResponseEntity<UserDTOWithoutPassword> updateById(@PathVariable String userId, @PathVariable String benchId, @RequestBody UserDTOWithoutPassword userDTOWithoutPassword) {
+        User user = userSerivce.addToFavoriteBenches(userId, benchId, userMapperDTOWithoutPassword.fromDTO(userDTOWithoutPassword));
+        return new ResponseEntity<>(userMapperDTOWithoutPassword.toDTO(user), HttpStatus.OK);
+    }
+
     @PreAuthorize("hasAuthority('USERS_DELETE')")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable String id) {

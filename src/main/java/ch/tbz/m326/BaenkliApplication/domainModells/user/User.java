@@ -3,6 +3,7 @@ package ch.tbz.m326.BaenkliApplication.domainModells.user;
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedEntity;
 import ch.tbz.m326.BaenkliApplication.domainModells.bench.Bench;
 import ch.tbz.m326.BaenkliApplication.domainModells.role.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -50,6 +51,16 @@ public class User extends ExtendedEntity {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles;
+
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinTable(
+            name = "users_benches",
+            joinColumns = @JoinColumn(name = "bench_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    private List<Bench> favoriteBenches;
 
     // Standard empty constructor
     public User() {
@@ -139,5 +150,13 @@ public class User extends ExtendedEntity {
     public User setRoles(Set<Role> roles) {
         this.roles = roles;
         return this;
+    }
+
+    public List<Bench> getFavoriteBenches() {
+        return favoriteBenches;
+    }
+
+    public void setFavoriteBenches(List<Bench> favoriteBenches) {
+        this.favoriteBenches = favoriteBenches;
     }
 }

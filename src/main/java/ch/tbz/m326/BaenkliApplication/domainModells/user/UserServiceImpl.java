@@ -3,6 +3,8 @@ package ch.tbz.m326.BaenkliApplication.domainModells.user;
 import ch.tbz.m326.BaenkliApplication.config.error.BadRequestException;
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedJpaRepository;
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedServiceImpl;
+import ch.tbz.m326.BaenkliApplication.domainModells.bench.Bench;
+import ch.tbz.m326.BaenkliApplication.domainModells.bench.BenchRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,15 +15,19 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserService {
 
     private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private BenchRepository benchRepository;
 
-    public UserServiceImpl(@Qualifier("userRepository") ExtendedJpaRepository<User> repository, BCryptPasswordEncoder bCryptPasswordEncoder) {
+    public UserServiceImpl(@Qualifier("userRepository") ExtendedJpaRepository<User> repository, BCryptPasswordEncoder bCryptPasswordEncoder, BenchRepository benchRepository) {
         super(repository);
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.benchRepository = benchRepository;
     }
 
 
@@ -45,6 +51,18 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
     @Override
     public User findByUsername(String username) {
         return findOrThrow(((UserRepository) repository).findByUsername(username));
+    }
+
+    @Override
+    public User addToFavoriteBenches(String userId, String benchId, User userToUpdate) {
+        Optional<Bench> benchToAdd = benchRepository.findById(benchId);
+        Optional<User> optionalUser = repository.findById(userToUpdate.getId());
+        if (benchToAdd != null && optionalUser != null) {
+            optionalUser.get().getFavoriteBenches().add(benchToAdd.get());
+            List<Bench> newList = optionalUser.get().getFavoriteBenches().stream().distinct().collect(Collectors.toList());
+            optionalUser.get().setFavoriteBenches(newList);
+        }
+        return updateById(userId, optionalUser.get());
     }
 
 

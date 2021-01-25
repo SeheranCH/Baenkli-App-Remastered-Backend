@@ -79,6 +79,11 @@ public class BenchServiceImpl extends ExtendedServiceImpl<Bench> implements Benc
     }
 
     @Override
+    public List<Bench> getFavoriteBenchesFromUserId(String userId) {
+        return ((BenchRepository) repository).getFavoriteBenchesFromUserId(userId);
+    }
+
+    @Override
     public Bench addRatingToBench(String benchId, String ratingId) {
         Bench bench = checkBenchById(benchId);
         Rating rating = ratingService.findById(ratingId);
