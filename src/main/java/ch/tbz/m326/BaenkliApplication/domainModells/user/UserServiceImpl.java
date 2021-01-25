@@ -12,7 +12,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
+import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -65,6 +67,19 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
         return updateById(userId, optionalUser.get());
     }
 
+    @Override
+    public User removeFromFavoriteBenches(String userId, String benchId, User userToUpdate) {
+        Optional<Bench> benchToRemove = benchRepository.findById(benchId);
+        Optional<User> user = repository.findById(userToUpdate.getId());
+        if (benchToRemove != null && user != null) {
+            List<Bench> currentFavorites = user.get().getFavoriteBenches().stream().distinct().collect(Collectors.toList());
+            if (currentFavorites.remove(benchToRemove.get())) {
+                user.get().setFavoriteBenches(currentFavorites);
+                return updateById(userId, user.get());
+            } else throw new NoSuchElementException("Article hasn't been able to be removed");
+        } else throw new NoSuchElementException("Article or User don't exist");
+
+    }
 
     @Override
     public User save(User user) {
