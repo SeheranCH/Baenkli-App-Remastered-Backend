@@ -57,8 +57,8 @@ public class User extends ExtendedEntity {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinTable(
             name = "users_benches",
-            joinColumns = @JoinColumn(name = "benches_id"),
-            inverseJoinColumns = @JoinColumn(name = "users_id")
+            joinColumns = @JoinColumn(name = "users_id"),
+            inverseJoinColumns = @JoinColumn(name = "benches_id")
     )
     private List<Bench> favoriteBenches;
 

@@ -56,7 +56,7 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
     @Override
     public User addToFavoriteBenches(String userId, String benchId, User userToUpdate) {
         Optional<Bench> benchToAdd = benchRepository.findById(benchId);
-        Optional<User> optionalUser = repository.findById(userToUpdate.getId());
+        Optional<User> optionalUser = repository.findById(userId);
         if (benchToAdd != null && optionalUser != null) {
             optionalUser.get().getFavoriteBenches().add(benchToAdd.get());
             List<Bench> newList = optionalUser.get().getFavoriteBenches().stream().distinct().collect(Collectors.toList());
@@ -91,6 +91,7 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
             user.setEmail(entity.getEmail());
             user.setFirstName(entity.getFirstName());
             user.setLastName(entity.getLastName());
+            user.setFavoriteBenches(entity.getFavoriteBenches());
             return repository.save(user);
         } else {
             throw new BadRequestException("Invalid body");

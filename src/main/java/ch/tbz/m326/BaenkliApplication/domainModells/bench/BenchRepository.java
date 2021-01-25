@@ -17,9 +17,10 @@ public interface BenchRepository extends ExtendedJpaRepository<Bench> {
     @Query(nativeQuery = true, value = "insert into public.bench_ratings (bench_id, ratings_id) values (:benchId, :ratingId)")
     void insertRatingToBench (@Param(value = "benchId") String benchId,  @Param(value = "ratingId") String ratingId);
 
+    @Transactional
     @Query(value = "SELECT * FROM public.bench RIGHT JOIN public.users_benches " +
             "ON public.bench.id = public.users_benches.benches_id " +
-            "WHERE public.users_benches.users_id = :userId ",
+            "WHERE public.users_benches.users_id = :user_id",
     nativeQuery = true)
-    List<Bench> getFavoriteBenchesFromUserId(@Param("userId") String userId);
+    List<Bench> getFavoriteBenchesFromUserId(@Param("user_id") String userId);
 }
