@@ -32,7 +32,6 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
         this.benchRepository = benchRepository;
     }
 
-
     /**
      * Actually load User by Email
      */
