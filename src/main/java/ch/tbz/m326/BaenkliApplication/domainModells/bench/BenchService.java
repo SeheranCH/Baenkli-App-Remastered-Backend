@@ -21,4 +21,6 @@ public interface BenchService extends ExtendedService<Bench> {
     Bench addAddressToBench (String benchId, String addressId);
 
     Bench checkBenchById (String id);
+
+    List<Bench> getFavoriteBenchesFromUserId(String userId);
 }

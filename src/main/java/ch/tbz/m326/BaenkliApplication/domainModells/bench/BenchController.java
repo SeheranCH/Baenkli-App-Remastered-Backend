@@ -34,13 +34,19 @@ public class BenchController {
         return new ResponseEntity<>(benchMapper.toDTOs(benches), HttpStatus.OK);
     }
 
+    @GetMapping({"/favorites/user/{userId}"})
+    public @ResponseBody
+    ResponseEntity<List<BenchDTO>> findAllFavoritesByUserId(@PathVariable String userId) {
+        List<Bench> benches = benchService.getFavoriteBenchesFromUserId(userId);
+        return new ResponseEntity<>(benchMapper.toDTOs(benches), HttpStatus.OK);
+    }
+
     @GetMapping({"/users/{userId}", "/users/{userId}/"})
     public @ResponseBody
     ResponseEntity<List<BenchDTO>> findAllByUserId(@PathVariable String userId) {
         List<Bench> benches = benchService.findByUserId(userId);
         return new ResponseEntity<>(benchMapper.toDTOs(benches), HttpStatus.OK);
     }
-
 
     @PostMapping({"", "/"})
     public ResponseEntity<BenchDTO> create(@RequestBody BenchDTO benchDTO) {

@@ -10,5 +10,7 @@ public interface UserService extends UserDetailsService, ExtendedService<User> {
     User findByEmail(String email);
 
     User findByUsername(String username);
+    User addToFavoriteBenches(String userId, String benchId, User userToUpdate);
+    User removeFromFavoriteBenches(String userId, String benchId, User userToUpdate);
 
 }

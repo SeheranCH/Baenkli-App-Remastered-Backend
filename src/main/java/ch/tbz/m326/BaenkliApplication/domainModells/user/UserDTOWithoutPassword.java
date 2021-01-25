@@ -1,6 +1,9 @@
 package ch.tbz.m326.BaenkliApplication.domainModells.user;
 
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedDTO;
+import ch.tbz.m326.BaenkliApplication.domainModells.bench.Bench;
+
+import java.util.List;
 
 public class UserDTOWithoutPassword extends ExtendedDTO {
 
@@ -13,6 +16,8 @@ public class UserDTOWithoutPassword extends ExtendedDTO {
     private String firstName;
 
     private String lastName;
+
+    private List<Bench> favoriteBenches;
 
     public UserDTOWithoutPassword() {
     }
@@ -59,5 +64,13 @@ public class UserDTOWithoutPassword extends ExtendedDTO {
     public UserDTOWithoutPassword setLastName(String lastName) {
         this.lastName = lastName;
         return this;
+    }
+
+    public List<Bench> getFavoriteBenches() {
+        return favoriteBenches;
+    }
+
+    public void setFavoriteBenches(List<Bench> favoriteBenches) {
+        this.favoriteBenches = favoriteBenches;
     }
 }

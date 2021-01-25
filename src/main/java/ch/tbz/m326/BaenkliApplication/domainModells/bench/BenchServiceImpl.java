@@ -79,6 +79,11 @@ public class BenchServiceImpl extends ExtendedServiceImpl<Bench> implements Benc
     }
 
     @Override
+    public List<Bench> getFavoriteBenchesFromUserId(String userId) {
+        return ((BenchRepository) repository).getFavoriteBenchesFromUserId(userId);
+    }
+
+    @Override
     public Bench addRatingToBench(String benchId, String ratingId) {
         Bench bench = checkBenchById(benchId);
         Rating rating = ratingService.findById(ratingId);
@@ -90,22 +95,6 @@ public class BenchServiceImpl extends ExtendedServiceImpl<Bench> implements Benc
         bench.setRatings(ratings);
         return repository.save(bench);
     }
-
-    /*
-    @Override
-    public Bench addQuietToBench(String benchId, String quietId) {
-        Bench bench = checkBenchById(benchId);
-        Quiet quiet = quietService.findById(quietId);
-        if (quiet == null) {
-            throw new NoSuchElementException(String.format("No rating found with id '%s'", quietId));
-        }
-        Set<Quiet> quiets = bench.getQuiets();
-        quiets.add(quiet);
-        bench.setQuiets(quiets);
-        return repository.save(bench);
-    }
-
-     */
 
     @Override
     public Bench addUserToBench(String benchId, String userId) {
