@@ -2,7 +2,6 @@ package ch.tbz.m326.BaenkliApplication.domainModells.bench.mapper;
 
 import ch.tbz.m326.BaenkliApplication.domainModells.bench.Bench;
 import ch.tbz.m326.BaenkliApplication.domainModells.bench.BenchDTO;
-import ch.tbz.m326.BaenkliApplication.domainModells.quiet.Quiet;
 import ch.tbz.m326.BaenkliApplication.domainModells.rating.Rating;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -13,8 +12,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-01-12T01:42:00+0100",
-    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.1 (Oracle Corporation)"
+    date = "2021-01-24T23:49:37+0100",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.2 (Oracle Corporation)"
 )
 @Component
 public class BenchMapperImpl implements BenchMapper {
@@ -45,10 +44,7 @@ public class BenchMapperImpl implements BenchMapper {
         if ( set != null ) {
             bench.setRatings( new HashSet<Rating>( set ) );
         }
-        Set<Quiet> set1 = dto.getQuiets();
-        if ( set1 != null ) {
-            bench.setQuiets( new HashSet<Quiet>( set1 ) );
-        }
+        bench.setQuietness( dto.getQuietness() );
 
         return bench;
     }
@@ -107,10 +103,7 @@ public class BenchMapperImpl implements BenchMapper {
         if ( set != null ) {
             benchDTO.setRatings( new HashSet<Rating>( set ) );
         }
-        Set<Quiet> set1 = dm.getQuiets();
-        if ( set1 != null ) {
-            benchDTO.setQuiets( new HashSet<Quiet>( set1 ) );
-        }
+        benchDTO.setQuietness( dm.getQuietness() );
 
         return benchDTO;
     }

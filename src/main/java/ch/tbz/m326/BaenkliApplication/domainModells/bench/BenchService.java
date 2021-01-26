@@ -10,13 +10,17 @@ public interface BenchService extends ExtendedService<Bench> {
 
     List<Bench> findByLongitudeLatitude (Double longitude, Double latitude);
 
+    List<Bench> findByUserId (String userId);
+
     Bench addRatingToBench (String benchId, String ratingId);
 
-    Bench addQuietToBench (String benchId, String quietId);
+    //Bench addQuietToBench (String benchId, String quietId);
 
     Bench addUserToBench (String benchId, String userId);
 
     Bench addAddressToBench (String benchId, String addressId);
 
     Bench checkBenchById (String id);
+
+    List<Bench> getFavoriteBenchesFromUserId(String userId);
 }

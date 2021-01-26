@@ -34,6 +34,20 @@ public class BenchController {
         return new ResponseEntity<>(benchMapper.toDTOs(benches), HttpStatus.OK);
     }
 
+    @GetMapping({"/favorites/user/{userId}"})
+    public @ResponseBody
+    ResponseEntity<List<BenchDTO>> findAllFavoritesByUserId(@PathVariable String userId) {
+        List<Bench> benches = benchService.getFavoriteBenchesFromUserId(userId);
+        return new ResponseEntity<>(benchMapper.toDTOs(benches), HttpStatus.OK);
+    }
+
+    @GetMapping({"/users/{userId}", "/users/{userId}/"})
+    public @ResponseBody
+    ResponseEntity<List<BenchDTO>> findAllByUserId(@PathVariable String userId) {
+        List<Bench> benches = benchService.findByUserId(userId);
+        return new ResponseEntity<>(benchMapper.toDTOs(benches), HttpStatus.OK);
+    }
+
     @PostMapping({"", "/"})
     public ResponseEntity<BenchDTO> create(@RequestBody BenchDTO benchDTO) {
         benchDTO = benchMapper.toDTO(benchService.save(benchMapper.fromDTO(benchDTO)));
@@ -46,11 +60,14 @@ public class BenchController {
         return new ResponseEntity<>(benchDTO, HttpStatus.OK);
     }
 
+    /*
     @PutMapping({"/{benchId}/quiet/{quietId}", "/{benchId}/quiet/{quietId}/"})
     public ResponseEntity<BenchDTO> addQuietToBench(@PathVariable String benchId, @PathVariable String quietId, @RequestBody BenchDTO benchDTO) {
         benchDTO = benchMapper.toDTO(benchService.addQuietToBench(benchId, quietId));
         return new ResponseEntity<>(benchDTO, HttpStatus.OK);
     }
+
+     */
 
     @PutMapping({"/{benchId}/user/{userId}", "/{benchId}/user/{userId}/"})
     public ResponseEntity<BenchDTO> addUserToBench(@PathVariable String benchId, @PathVariable String userId, @RequestBody BenchDTO benchDTO) {
@@ -79,6 +96,10 @@ public class BenchController {
     /**
      * Get benches by address
      */
+    /**
+     *
+     * NOT WORKING !!! NEED TO BE FIXED
+     */
     @GetMapping("/address/{id}")
     public @ResponseBody
     ResponseEntity<List<BenchDTO>> findByAddressId(@PathVariable String id) {
@@ -88,6 +109,10 @@ public class BenchController {
 
     /**
      * Get benches by longitude and latitude
+     */
+    /**
+     *
+     * NOT WORKING !!! NEED TO BE FIXED
      */
     @GetMapping("/{longitude}/{latitude}")
     public @ResponseBody

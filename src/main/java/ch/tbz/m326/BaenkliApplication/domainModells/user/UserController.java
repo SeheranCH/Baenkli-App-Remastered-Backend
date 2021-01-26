@@ -1,11 +1,11 @@
 package ch.tbz.m326.BaenkliApplication.domainModells.user;
 
 import ch.tbz.m326.BaenkliApplication.domainModells.user.mapper.UserMapper;
+import ch.tbz.m326.BaenkliApplication.domainModells.user.mapper.UserMapperDTOWithoutPassword;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,25 +18,27 @@ public class UserController {
 
     private UserService userSerivce;
     private UserMapper userMapper;
+    private UserMapperDTOWithoutPassword userMapperDTOWithoutPassword;
 
     @Autowired
-    public UserController(UserService userService, UserMapper userMapper) {
+    public UserController(UserService userService, UserMapper userMapper, UserMapperDTOWithoutPassword userMapperDTOWithoutPassword) {
         this.userSerivce = userService;
         this.userMapper = userMapper;
+        this.userMapperDTOWithoutPassword = userMapperDTOWithoutPassword;
     }
 
     @PreAuthorize("hasAuthority('USERS_SEE')")
     @GetMapping("/{id}")
-    public ResponseEntity<UserDTO> findById(@PathVariable String id) {
+    public ResponseEntity<UserDTOWithoutPassword> findById(@PathVariable String id) {
         User user = userSerivce.findById(id);
-        return new ResponseEntity<>(userMapper.toDTO(user), HttpStatus.OK);
+        return new ResponseEntity<>(userMapperDTOWithoutPassword.toDTO(user), HttpStatus.OK);
     }
 
     @PreAuthorize("hasAuthority('USERS_SEE')")
     @GetMapping({"", "/"})
-    public @ResponseBody ResponseEntity<List<UserDTO>> findAll() {
+    public @ResponseBody ResponseEntity<List<UserDTOWithoutPassword>> findAll() {
         List<User> users = userSerivce.findAll();
-        return new ResponseEntity<>(userMapper.toDTOs(users), HttpStatus.OK);
+        return new ResponseEntity<>(userMapperDTOWithoutPassword.toDTOs(users), HttpStatus.OK);
     }
 
     @PostMapping({"", "/"})
@@ -47,9 +49,21 @@ public class UserController {
 
     @PreAuthorize("hasAuthority('USERS_UPDATE')")
     @PutMapping("/{id}")
-    public ResponseEntity<UserDTO> updateById(@PathVariable String id, @RequestBody UserDTO userDTO) {
-        User user = userSerivce.updateById(id, userMapper.fromDTO(userDTO));
-        return new ResponseEntity<>(userMapper.toDTO(user), HttpStatus.OK);
+    public ResponseEntity<UserDTOWithoutPassword> updateById(@PathVariable String id, @RequestBody UserDTOWithoutPassword userDTOWithoutPassword) {
+        User user = userSerivce.updateById(id, userMapperDTOWithoutPassword.fromDTO(userDTOWithoutPassword));
+        return new ResponseEntity<>(userMapperDTOWithoutPassword.toDTO(user), HttpStatus.OK);
+    }
+
+    @PutMapping("/{userId}/add/favorites/benches/{benchId}")
+    public ResponseEntity<UserDTOWithoutPassword> addToFavoritesById(@PathVariable String userId, @PathVariable String benchId, @RequestBody UserDTOWithoutPassword userDTOWithoutPassword) {
+        User user = userSerivce.addToFavoriteBenches(userId, benchId, userMapperDTOWithoutPassword.fromDTO(userDTOWithoutPassword));
+        return new ResponseEntity<>(userMapperDTOWithoutPassword.toDTO(user), HttpStatus.OK);
+    }
+
+    @PutMapping("/{userId}/remove/favorites/benches/{benchId}")
+    public ResponseEntity<UserDTOWithoutPassword> removeFromFavoritesById(@PathVariable String userId, @PathVariable String benchId, @RequestBody UserDTOWithoutPassword userDTOWithoutPassword) {
+        User user = userSerivce.removeFromFavoriteBenches(userId, benchId, userMapperDTOWithoutPassword.fromDTO(userDTOWithoutPassword));
+        return new ResponseEntity<>(userMapperDTOWithoutPassword.toDTO(user), HttpStatus.OK);
     }
 
     @PreAuthorize("hasAuthority('USERS_DELETE')")

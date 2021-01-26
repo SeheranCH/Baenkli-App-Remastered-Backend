@@ -1,11 +1,10 @@
 package ch.tbz.m326.BaenkliApplication.domainModells.bench;
 
+import ch.tbz.m326.BaenkliApplication.config.error.BadRequestException;
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedJpaRepository;
 import ch.tbz.m326.BaenkliApplication.config.generic.ExtendedServiceImpl;
 import ch.tbz.m326.BaenkliApplication.domainModells.address.Address;
 import ch.tbz.m326.BaenkliApplication.domainModells.address.AddressService;
-import ch.tbz.m326.BaenkliApplication.domainModells.quiet.Quiet;
-import ch.tbz.m326.BaenkliApplication.domainModells.quiet.QuietService;
 import ch.tbz.m326.BaenkliApplication.domainModells.rating.Rating;
 import ch.tbz.m326.BaenkliApplication.domainModells.rating.RatingService;
 import ch.tbz.m326.BaenkliApplication.domainModells.user.User;
@@ -21,15 +20,15 @@ import java.util.Set;
 @Service
 public class BenchServiceImpl extends ExtendedServiceImpl<Bench> implements BenchService {
 
+    private BenchRepository benchRepository;
     private RatingService ratingService;
-    private QuietService quietService;
     private UserService userService;
     private AddressService addressService;
 
-    public BenchServiceImpl(@Qualifier("benchRepository") ExtendedJpaRepository<Bench> repository, RatingService ratingService, QuietService quietService, UserService userService, AddressService addressService) {
+    public BenchServiceImpl(@Qualifier("benchRepository") ExtendedJpaRepository<Bench> repository, BenchRepository benchRepository, RatingService ratingService, UserService userService, AddressService addressService) {
         super(repository);
+        this.benchRepository = benchRepository;
         this.ratingService = ratingService;
-        this.quietService = quietService;
         this.userService = userService;
         this.addressService = addressService;
     }
@@ -59,6 +58,17 @@ public class BenchServiceImpl extends ExtendedServiceImpl<Bench> implements Benc
     }
 
     @Override
+    public List<Bench> findByUserId(String userId) {
+        User user = userService.findById(userId);
+        if (user != null) {
+            List<Bench> benchesByUser = benchRepository.findAllByUserId(userId);
+            return benchesByUser;
+        } else {
+            throw new BadRequestException("User Id not found");
+        }
+    }
+
+    @Override
     public Bench checkBenchById(String id) {
         Bench bench = findById(id);
         if (bench == null) {
@@ -66,6 +76,11 @@ public class BenchServiceImpl extends ExtendedServiceImpl<Bench> implements Benc
         } else {
             return bench;
         }
+    }
+
+    @Override
+    public List<Bench> getFavoriteBenchesFromUserId(String userId) {
+        return ((BenchRepository) repository).getFavoriteBenchesFromUserId(userId);
     }
 
     @Override
@@ -78,19 +93,6 @@ public class BenchServiceImpl extends ExtendedServiceImpl<Bench> implements Benc
         Set<Rating> ratings = bench.getRatings();
         ratings.add(rating);
         bench.setRatings(ratings);
-        return repository.save(bench);
-    }
-
-    @Override
-    public Bench addQuietToBench(String benchId, String quietId) {
-        Bench bench = checkBenchById(benchId);
-        Quiet quiet = quietService.findById(quietId);
-        if (quiet == null) {
-            throw new NoSuchElementException(String.format("No rating found with id '%s'", quietId));
-        }
-        Set<Quiet> quiets = bench.getQuiets();
-        quiets.add(quiet);
-        bench.setQuiets(quiets);
         return repository.save(bench);
     }
 
