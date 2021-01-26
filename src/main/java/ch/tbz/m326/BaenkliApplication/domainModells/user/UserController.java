@@ -25,14 +25,13 @@ public class UserController {
         this.userMapper = userMapper;
     }
 
-    @PreAuthorize("hasAuthority('USERS_SEE')")
+    @PreAuthorize("hasAuthority('U_SEE_ALL')")
     @GetMapping("/{id}")
     public ResponseEntity<UserDTO> findById(@PathVariable String id) {
         User user = userSerivce.findById(id);
         return new ResponseEntity<>(userMapper.toDTO(user), HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAuthority('USERS_SEE')")
     @GetMapping({"", "/"})
     public @ResponseBody ResponseEntity<List<UserDTO>> findAll() {
         List<User> users = userSerivce.findAll();
